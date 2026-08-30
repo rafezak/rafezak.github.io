@@ -44,8 +44,14 @@
   </div>
 
   <div class="wrap">
-    <!-- Vervang door: <img src="assets/childjourney-hero.png" alt="Screenshot van Childjourney"> -->
-    <div class="ph ph--hero">assets/childjourney-hero.png<br>1920 × 1080</div>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/vko_lexMmiQ"
+        title="Childjourney — trailer"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
 
     <dl class="meta">
       <div>
@@ -104,9 +110,138 @@
     </p>
 
     <figure>
-      <!-- Vervang door: <img src="assets/childjourney-1.png" alt="..."> -->
-      <div class="ph ph--wide">assets/childjourney-1.png<br>1600 × 800</div>
-      <figcaption>Vervang deze onderschriften door wat er te zien is — bijvoorbeeld het speelscherm of een animatiestap.</figcaption>
+      <div class="cj-hero">
+        <img class="cj-hero__bg" src="svg/worldanim.svg" alt="" aria-hidden="true">
+
+        <!-- Speelkarakter uit Childjourney. De SVG staat inline (in plaats van als
+             <img>) omdat de ingebouwde animatie alleen dan op hover kan afspelen. -->
+        <div class="cj-hero__player" aria-hidden="true">
+          <svg viewBox="0 0 512 512" data-app="Xyris" id="cj-player-svg">
+            <defs>
+            </defs>
+            <g transform="" transform-origin="">
+              <g transform-origin="center" transform="" style="transform-box: fill-box;">
+                <g id="hair1">
+                  <path fill="#ECAC5A" d="M 203.859 171.851 C 203.006 195.297 195.697 212.965 202.058 225.097 C 208.419 237.229 236.181 236.883 256.948 236.883 C 284.155 236.883 303.76 235.982 312.01 226.727 C 320.26 217.471 312.007 196.319 312.01 179.883 C 297.25 172.273 204.714 148.406 203.86 171.851 Z" transform="">
+                  </path>
+                </g>
+                <path fill="rgb(0, 0, 0)" d="M 301.81 232.938 C 306.015 231.541 309.527 229.512 312.01 226.726 C 320.26 217.471 313.688 199.748 312.702 190.876 C 314.741 209.901 313.691 218.393 301.81 232.938 Z" transform="" fill-opacity="0.04">
+                </path>
+                <g transform-origin="283.0010070800782 248.82699584960938" transform="rotate(-75)">
+                  <path fill="#EDB9A3" d="M 312.667 274.129 C 307.803 269.769 302.843 258.246 296.753 255.821 C 290.663 253.396 290.673 248.827 290.673 248.827 L 283.156 255.089 C 283.156 255.089 287.157 257.015 288.666 262.455 C 290.175 267.895 302.887 275.782 306.3 280.743 C 306.916 281.639 306.731 285.5 307.681 286.585 C 310.868 286.667 318.136 278.54 318.359 275.535 C 318.44 274.638 313.873 275.21 312.667 274.129 Z" transform="">
+                  </path>
+                  <circle cx="315.914" cy="283.836" r="8.931" fill="#EDB9A3" transform="">
+                  </circle>
+                  <animateTransform id="cj-anim-wave" attributeName="transform" type="rotate" begin="indefinite" dur="1.85404" keyTimes="0; 0.27615939143406154; 0.407766957370466; 0.524271844660194; 0.6321467098166127; 0.7346278317152104; 0.8425026968716288; 1" values="75;-10;10;-10;10;-10;10;75" fill="freeze" additive="sum" calcMode="spline" keySplines="0 0 0.65 0.98;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 1 1;0 0 0.65 0.98">
+                  </animateTransform>
+                </g>
+                <path fill="#EDB9A3" d="M 205.795 278.338 C 210.155 273.474 221.678 268.514 224.103 262.424 C 226.527 256.333 231.096 256.344 231.096 256.344 L 224.836 248.827 C 224.836 248.827 222.91 252.828 217.469 254.337 C 212.029 255.846 204.142 268.558 199.181 271.971 C 198.285 272.587 194.424 272.401 193.339 273.352 C 193.258 276.539 201.384 283.806 204.389 284.03 C 205.287 284.111 204.714 279.544 205.796 278.338 Z" transform="">
+                </path>
+                <circle cx="2.931" cy="147.603" r="8.931" fill="#EDB9A3" transform="matrix(6.123233995736766e-17,1,-1,6.123233995736766e-17,343.68983483314514,278.6540524959564)" transform-origin="">
+                </circle>
+
+                <g id="shoes">
+                  <path fill="rgb(0, 0, 0)" d="M 276.102 332.376 L 263.247 331.35 C 263.247 331.35 261.584 335.992 261.913 337.964 C 262.243 339.936 262.397 346.483 263.247 347.205 C 264.623 348.376 279.577 347.412 280.664 347.205 C 281.751 346.999 282.183 344.618 281.936 342.4 C 281.688 340.182 276.102 332.376 276.102 332.376 Z" transform="" fill-opacity="0.80">
+                </path>
+                <path fill="rgb(0, 0, 0)" d="M 239.818 332.376 L 252.674 331.35 C 252.674 331.35 254.337 335.993 254.007 337.964 C 253.677 339.936 253.523 346.483 252.674 347.206 C 251.298 348.376 236.342 347.412 235.256 347.206 C 234.169 346.999 233.737 344.618 233.984 342.4 C 234.231 340.182 239.818 332.376 239.818 332.376 Z" transform="" fill-opacity="0.80">
+                </path>
+                  <path fill="#222" d="M 276.102 332.376 L 274.246 332.376 C 274.246 332.376 281.516 340.105 274.968 339.169 C 275.639 341.409 278.761 344.834 277.683 347.457 C 279.105 347.369 280.375 347.26 280.664 347.205 C 281.751 346.999 282.183 344.618 281.936 342.4 C 281.689 340.182 276.102 332.376 276.102 332.376 Z" transform="">
+                  </path>
+                  <path fill="#222" d="M 271.811 338.957 C 266.906 338.936 262.156 340.365 262.319 342.315 C 262.489 344.342 262.748 346.781 263.247 347.205 C 264.623 348.376 279.579 347.412 280.665 347.205 C 281.751 346.999 282.183 344.618 281.936 342.4 C 281.689 340.182 276.715 338.978 271.811 338.957 Z" transform="">
+                  </path>
+                  <path fill="#222" d="M 244.11 338.957 C 249.014 338.936 253.765 340.365 253.602 342.316 C 253.432 344.342 253.173 346.781 252.674 347.206 C 251.298 348.376 236.342 347.412 235.256 347.206 C 234.169 346.999 233.737 344.618 233.984 342.4 C 234.231 340.182 239.206 338.978 244.11 338.957 Z" transform="">
+                  </path>
+                  <path fill="#222" d="M 253.532 334.179 C 253.832 335.292 254.173 336.968 254.007 337.964 C 253.677 339.936 253.522 346.483 252.673 347.206 C 251.727 348.011 249.211 344.242 249.837 339.667 C 253.561 340.747 253.355 335.834 253.532 334.179 Z" transform="">
+                  </path>
+                </g>
+                <g id="soles">
+                  <path fill="#DDD5D2" d="M 262.489 344.043 C 262.65 345.839 262.809 346.824 263.259 347.206 C 264.635 348.376 279.589 347.412 280.676 347.206 C 281.431 347.062 281.87 345.868 282.004 344.098 C 277.956 344.867 264.424 344.77 262.489 344.043 Z" transform="">
+                  </path>
+                  <path fill="#DDD5D2" d="M 253.431 344.043 C 253.271 345.839 253.111 346.824 252.661 347.206 C 251.286 348.376 236.331 347.412 235.244 347.206 C 234.489 347.062 234.05 345.868 233.916 344.098 C 237.964 344.867 251.496 344.77 253.431 344.043 Z" transform="">
+                  </path>
+                </g>
+                <g id="pants">
+                  <path fill="#009FEA" d="M 261.965 331.4 C 260.895 328.883 261.93 297.885 258.596 297.99 C 258.389 297.994 258.182 297.987 257.976 297.968 C 257.792 297.986 257.607 297.993 257.423 297.99 C 254.088 297.885 255.121 328.883 254.053 331.4 C 252.983 333.913 239.815 335.675 238.635 331.4 C 238.045 329.274 237.422 316.426 236.233 306.06 C 235.893 303.094 235.505 300.224 235.101 297.324 C 234.3 291.492 233.611 286.838 234.056 285.827 C 235.086 283.496 251.862 284.968 258.009 285.59 C 264.154 284.968 280.928 283.496 281.962 285.827 C 282.405 286.838 281.717 291.492 280.916 297.324 C 280.513 300.224 280.125 303.094 279.784 306.06 C 278.595 316.426 277.973 329.274 277.384 331.4 C 276.867 333.273 274.049 333.987 270.954 333.987 C 266.986 333.987 262.565 332.812 261.964 331.4 Z" transform="">
+                  </path>
+                </g>
+                <path fill="rgb(0, 0, 0)" d="M 273.891 333.729 C 275.519 333.459 277.021 332.715 277.384 331.398 C 277.972 329.273 278.594 316.425 279.786 306.059 C 280.126 303.093 280.514 300.225 280.914 297.322 C 281.718 291.493 282.405 286.836 281.959 285.827 C 281.665 285.161 281.955 284.416 279.395 284.243 C 276.667 293.183 276.163 320.498 273.891 333.729 Z" transform="" fill-opacity="0.1">
+                </path>
+                <g id="shirt">
+                  <path fill="#DF1A16" d="M 241.781 227.49 C 236.251 230.73 226.517 242.285 222.365 243.599 C 218.212 244.913 228.101 258.133 234.412 258.454 C 240.722 258.775 240.403 255.775 241.309 253.289 C 244.819 243.655 247.311 224.25 241.781 227.49 Z" transform="">
+                  </path>
+                  <path fill="#DF1A16" d="M 274.235 227.49 C 279.765 230.73 289.498 242.285 293.65 243.599 C 297.803 244.913 287.914 258.133 281.603 258.454 C 275.293 258.775 275.613 255.775 274.707 253.289 C 271.197 243.655 268.704 224.25 274.235 227.49 Z" transform="">
+                  </path>
+                  <path fill="#DF1A16" d="M 241.829 227.49 C 241.829 227.49 250.092 223.296 258.052 223.296 C 266.012 223.296 274.27 227.49 274.27 227.49 C 274.27 227.49 275.599 238.882 279.16 249.533 C 282.72 260.183 286.878 280.026 285.42 282.883 C 283.961 285.74 271.696 289.844 258.052 289.844 C 244.407 289.844 232.238 285.792 230.842 282.883 C 229.445 279.974 233.624 259.167 237.134 249.533 C 240.644 239.898 241.829 227.49 241.829 227.49 Z" transform="">
+                  </path>
+                </g>
+                <path fill="rgb(0, 0, 0)" d="M 244.537 226.292 C 247.281 225.167 252.734 223.296 258.051 223.296 C 262.898 223.296 267.857 224.851 271.281 226.18 C 272.125 226.507 273.363 234.717 258.051 234.781 C 242.738 234.845 243.618 226.668 244.537 226.292 Z" transform="" fill-opacity="0.43">
+                </path>
+                <path fill="rgb(0, 0, 0)" d="M 229.753 256.522 C 230.711 257.564 231.851 258.378 232.857 258.454 C 237.061 258.775 236.848 255.775 237.451 253.289 C 238.752 247.932 239.623414936985 245.67524418465524 239.705414936985 239.54324418465524 C 239.765414936985 235.19724418465523 232.103 252.841 229.753 256.522 Z" transform="" opacity="0.1">
+                </path>
+                <path fill="rgb(0, 0, 0)" d="M 276.868 241.493 C 277.218 242.944 277.599 244.388 278.01 245.823 C 278.365 247.068 278.748 248.305 279.159 249.533 C 282.719 260.183 286.878 280.026 285.419 282.883 C 284.763 284.168 281.919 285.707 277.465 287.096 C 280.652 273.33 274.992 233.678 276.868 241.493 Z M 274.235 227.49 C 279.765 230.73 289.498 242.285 293.651 243.599 C 295.283 244.115 294.746 246.471 292.957 249.407 C 284.136 246.357 269.995 230.947 269.062 228.104 C 268.291 224.669 272.2 226.298 274.235 227.49 Z" transform="" fill-opacity="0.1">
+                </path>
+                <path fill="rgb(0, 0, 0)" d="M 253.729 301.051 C 254.571 298.444 257.629 297.249 256.977 298.128 C 256.326 299.007 256.265 299.583 256.097 300.219 C 254.357 306.757 254.957 329.27 254.053 331.399 C 253.743 332.131 250.347 333.348 250.347 333.348 C 250.347 333.348 252.887 303.659 253.729 301.051 Z" transform="" fill-opacity="0.1">
+                </path>
+                <path fill="#E8A68A" d="M 258.012 231.671 C 251.535 231.614 247.457 228.335 247.862 226.37 C 249.018 224.456 248.998 222.503 248.998 220.293 C 248.998 213.115 249.453 207.229 258.012 207.186 C 266.571 207.143 267.062 213.116 267.062 220.293 C 267.062 222.195 266.91 224.367 268.151 226.286 C 268.688 228.25 264.891 231.732 258.012 231.671 Z" transform="">
+                </path>
+                <path fill="#E19E82" d="M 267.061 220.293 C 267.061 222.195 266.91 224.367 268.151 226.286 C 268.453 227.392 267.381 228.979 264.888 230.281 C 263.436 231.048 267.061 213.115 267.061 220.293 Z" transform="">
+                </path>
+                <path fill="#EDB9A3" d="M 258.007 225.034 C 214.554 224.751 207.894 210.217 207.894 185.554 C 207.894 160.892 218.274 141.048 258.007 140.9 C 297.741 140.751 308.12 160.892 308.12 185.554 C 308.12 210.217 301.461 225.318 258.007 225.034 Z" id="motion-path-op22erJgjugxJ9Hq9YcRMM" transform="">
+                </path>
+                <ellipse cx="233.695" cy="190.316" fill="#fff" rx="12.404" ry="16.869" transform="">
+                </ellipse>
+                <ellipse cx="236.176" cy="191.309" fill="#322A28" rx="7.939" ry="10.916" transform="">
+                </ellipse>
+                <circle cx="232.206" cy="185.355" r="0.992" fill="#fff" transform="">
+                </circle>
+                <ellipse cx="282.319" cy="190.316" fill="#fff" rx="12.404" ry="16.869" transform="">
+                </ellipse>
+                <ellipse cx="279.838" cy="191.309" fill="#322A28" rx="7.939" ry="10.916" transform="">
+                </ellipse>
+                <circle cx="275.868" cy="185.355" r="0.992" fill="#fff" transform="">
+                </circle>
+                <path fill="#B57E67" d="M 253.045 209.328 L 262.968 209.328 C 262.968 209.328 263.118 218.467 258.116 218.467 C 253.114 218.467 253.045 209.328 253.045 209.328 Z" transform="">
+                </path>
+                <path fill="#fff" d="M 255.665 209.328 L 260.347 209.328 C 260.347 209.328 260.344 211.211 257.984 211.211 C 255.624 211.211 255.664 209.328 255.664 209.328 Z" transform="">
+                </path>
+                <path fill="#E8A68A" d="M 258.007 203.675 C 254.57 203.652 254.044 202.503 254.044 200.552 C 254.044 198.602 254.864 197.032 258.007 197.02 C 261.15 197.009 261.971 198.602 261.971 200.552 C 261.971 202.502 261.444 203.697 258.007 203.675 Z" transform="">
+                </path>
+                <path fill="#E8B29B" d="M 300.363 156.817 C 306.046 164.41 308.12 174.53 308.12 185.555 C 308.12 206.69 303.229 220.804 274.176 224.265 C 290.159 216.974 306.042 216.726 300.363 156.816 Z" transform="">
+                </path>
+                <ellipse cx="31.0266" cy="78.8764" fill="#E69674" rx="2.481" ry="3.473" transform="matrix(0.6691306063588582,-0.7431448254773942,0.7431448254773942,0.6691306063588582,144.70222556190595,182.8665987224615)" transform-origin="">
+                </ellipse>
+                <ellipse cx="100.317" cy="75.6164" fill="#E69674" rx="2.481" ry="3.473" transform="matrix(-0.6691306063588582,-0.7431448254773942,0.7431448254773942,-0.6691306063588582,304.508422821264,334.4754306288899)" transform-origin="">
+                </ellipse>
+                <path fill="#3D3533" d="M 285.259 183.335 C 286.729 185.098 287.777 188.035 287.777 191.309 C 287.777 197.337 284.222 202.224 279.838 202.224 C 277.891 202.224 276.108 201.261 274.532 199.428 C 286.428 201.588 287.609 189.46 285.259 183.335 Z M 241.596 183.335 C 243.066 185.098 244.114 188.035 244.114 191.309 C 244.114 197.337 240.559 202.224 236.174 202.224 C 234.228 202.224 232.445 201.261 230.869 199.428 C 242.765 201.588 243.946 189.46 241.596 183.335 Z" transform="">
+                </path>
+                <g id="hair2">
+                  <path fill="#ECAC5A" d="M 245.664 171.182 C 228.434 174.063 203.784 174.5 203.825 171.692 C 205.255 151.543 219.232 134.007 257.603 133.88 C 298.773 133.744 312.067 152.324 312.067 174.865 C 312.281 186.225 310.649 191.061 307.008 189.275 C 292.134 181.665 276.728 157.934 276.728 157.934 C 276.728 157.934 262.893 168.3 245.665 171.182 Z" transform="">
+                  </path>
+                </g>
+                <path fill="rgb(0, 0, 0)" d="M 284.57 137.572 C 304.787 143.857 312.067 158.368 312.067 175.049 C 312.254 184.954 311.036 189.899 308.05 189.797 C 308.024 189.799 306.276 189.349 303.444 187.254 C 308.742 181.723 307.455 152.724 284.57 137.572 Z M 245.664 171.364 C 228.434 174.246 203.784 174.682 203.825 171.874 C 203.965 169.899 204.225 167.95 204.667 165.804 C 233.046 173.378 276.729 158.117 276.729 158.117 C 276.729 158.117 262.892 168.482 245.664 171.364 Z" transform="" fill-opacity="0.04">
+                </path>
+                <g transform-origin="0 0" transform="matrix(1,0,0,1,-257.8089904785156,-190.22311401367188)" visibility="hidden">
+                  <path d="M 491.493 363.376 C 499.153 363.376 505.363 371.775 505.363 381.818 C 505.363 392.044 499.153 400.444 491.493 400.444 C 483.832 400.444 477.62 392.044 477.62 381.818 C 477.62 376.158 479.617 370.862 482.739 367.576 C 485.126 365.019 488.174 363.376 491.493 363.376 Z" fill="#EDB9A3" transform="">
+                  </path>
+                  <path d="M 491.491 392.409 C 505.681 392.227 501.235 394.966 499.453 396.974 C 497.671 398.983 495.367 400.444 491.491 400.444 C 487.616 400.444 485.042 398.07 483.8 397.157 C 482.558 396.244 477.301 392.409 491.491 392.409 Z" fill="rgb(230, 166, 138)" stroke="#000000" stroke-width="0" transform="">
+                  </path>
+                  <path d="M 494.521 398.8 C 499.401 398.8 497.275 398.435 497.259 398.983 C 497.243 399.348 493.764 400.444 492.431 400.444 C 491.099 400.444 490.003 400.809 487.247 399.531 C 484.491 398.252 486.685 398.8 491.565 398.8 Z" fill="rgb(25, 23, 23)" stroke="#000000" stroke-width="0" transform="">
+                  </path>
+                  <path d="M 540.138 362.28 C 547.798 362.28 554.008 370.497 554.008 380.723 C 554.008 390.948 547.798 399.165 540.138 399.165 C 532.477 399.165 526.265 390.948 526.265 380.723 C 526.265 375.062 528.262 369.767 531.384 366.48 C 533.771 363.924 536.819 362.28 540.138 362.28 Z" fill="#EDB9A3" transform="">
+                  </path>
+                  <path d="M 540.136 391.314 C 554.326 391.131 549.88 393.87 548.098 395.879 C 546.316 397.705 544.012 399.165 540.136 399.165 C 536.261 399.165 533.687 396.974 532.445 396.061 C 531.203 395.148 525.946 391.314 540.136 391.314 Z" fill="rgb(230, 166, 138)" stroke="#000000" stroke-width="0" transform="">
+                  </path>
+                  <path d="M 543.166 397.522 C 548.046 397.522 545.92 397.339 545.904 397.887 C 545.888 398.252 542.409 399.165 541.076 399.165 C 539.744 399.165 538.648 399.713 535.892 398.435 C 533.136 396.974 535.33 397.705 540.21 397.705 Z" fill="rgb(25, 23, 23)" stroke="#000000" stroke-width="0" transform="">
+                  </path>
+                  <animate id="cj-anim-hand" attributeName="visibility" keyTimes="0; 0.9620050155593561; 1" values="hidden; visible; hidden" begin="indefinite" dur="2.598715674967606" fill="freeze" calcMode="spline" keySplines="0 0 1 1; 0 0 1 1">
+                  </animate>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <figcaption>Het personage van Childjourney — beweegt over de wereldkaart, met een kleine verrassing als je erover hovert.</figcaption>
     </figure>
 
     <h2>Wat ik heb gebouwd</h2>
@@ -121,21 +256,12 @@
       <li>Het visuele ontwerp, afgestemd op de leeftijdsgroep en op wat er in een zorgcontext kan.</li>
     </ul>
 
-    <figure>
-      <div class="ph ph--wide">assets/childjourney-2.png<br>1600 × 800</div>
-      <figcaption>Nog een beeld — bijvoorbeeld een detail van de interface of een schets uit het ontwerpproces.</figcaption>
-    </figure>
-
+   
     <h2>Wat ik eruit heb geleerd</h2>
 
     <div class="callout">
       <p>
-        <strong>Nog te schrijven — in je eigen woorden.</strong> Dit is het stuk waar een
-        werkgever of afstudeerbegeleider het langst bij stilstaat, dus laat het niet door
-        iemand anders formuleren. Denk aan: waar liep je vast en hoe kwam je eruit? Welke
-        keuze zou je nu anders maken? Wat bleek moeilijker dan verwacht toen je voor kinderen
-        ging ontwerpen in plaats van voor jezelf? Vier of vijf eerlijke zinnen zijn genoeg —
-        eerlijker is beter dan indrukwekkender.
+        Childjourney heeft mij geleerd dat het ontwerpen van een spel voor kinderen in een zorgcontext veel meer is dan alleen het maken van een leuk spel. Het gaat om het begrijpen van de behoeften van de kinderen, het creëren van een veilige en ondersteunende omgeving, en het samenwerken met zorgprofessionals om ervoor te zorgen dat het spel effectief is in het bereiken van zijn doelen. Bovendien het leren van de technische uitdagingen van het bouwen van een interactieve applicatie met animaties en het werken in een klein team heeft mijn vaardigheden als ontwikkelaar en ontwerper versterkt.
       </p>
     </div>
 
@@ -160,6 +286,28 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Speelt de ingebouwde SVG-animatie van het personage af zodra je erover
+  // hovert. De animatie zelf staat op begin="indefinite" en start hier via
+  // beginElement() — daardoor loopt ze altijd volledig af (ook als de muis
+  // eerder weggaat) en start ze gewoon opnieuw bij een volgende hover.
+  (function(){
+    var trigger = document.querySelector('.cj-hero__player');
+    if(!trigger) return;
+    var anims = trigger.querySelectorAll('#cj-anim-wave, #cj-anim-hand');
+    trigger.addEventListener('mouseenter', function(){
+      // In een animatieframe i.p.v. direct: voorkomt dat het starten van de
+      // animatie een gedwongen reflow van de hele pagina veroorzaakt, wat de
+      // los-lopende achtergrondanimatie kon laten haperen.
+      requestAnimationFrame(function(){
+        anims.forEach(function(anim){
+          try { anim.beginElement(); } catch(e) {}
+        });
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
