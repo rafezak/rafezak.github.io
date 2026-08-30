@@ -196,6 +196,11 @@ section > h2{
 
 figure{ margin:32px 0; }
 figure img{ border-radius:var(--radius); border:1px solid var(--line); }
+.figure-img--pixel{
+  display:block; margin:0 auto;
+  max-width:520px; width:100%;
+  image-rendering:pixelated; /* houdt de pixel-art crisp bij het opschalen */
+}
 figcaption{ font-size:14px; color:var(--muted); margin-top:8px; }
 
 /* ---------------- case pages ---------------- */
