@@ -185,7 +185,7 @@ section > h2{
 }
 .cj-hero__player{
   position:absolute; right:5%; bottom:3%;
-  width:16%; min-width:90px; max-width:190px;
+  width:16%; min-width:55px; max-width:160px;
   cursor:pointer;
   /* zelfde truc, maar dan omgekeerd: sluit de player in zijn eigen laag op
      zodat zijn animatie de achtergrond-laag niet kan meeslepen bij hover */
