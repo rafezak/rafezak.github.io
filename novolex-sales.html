@@ -38,13 +38,19 @@
     <a class="back" href="index.html">← Alle projecten</a>
     <h1>Novolex — sales op de kaart</h1>
     <p class="sub">
-      Een interactieve kaart die de sales-data van Novolex per regio plot, zodat
-      het salesteam in één oogopslag ziet waar de omzet zit — en waar niet.
+      Een interactieve kaart die de sales- en margecijfers van Novolex per
+      distributiecentrum plot, zodat het salesteam in één oogopslag ziet waar de
+      omzet en de marge zitten — en waar niet.
     </p>
   </div>
 
   <div class="wrap">
-    <div class="ph ph--hero">svg/novolex-sales-kaart.png<br>screenshot (dummydata)</div>
+    <img src="svg/Schermafbeelding%202026-08-31%20115219.png"
+         alt="Sales · Margin Map in stavenweergave: distributiecentra door heel Europa met per DC een 3D-staaf, een KPI-balk bovenin, een dalerslijst linksonder en een detailpaneel rechts."
+         style="border-radius:var(--radius); border:1px solid var(--line); margin:0 0 8px;">
+    <p style="font-size:14px; color:var(--muted); margin:0 0 12px;">
+      <em>Alle cijfers in de schermafbeeldingen op deze pagina zijn dummydata. klantendata, cijfers en andere bedrijfsinformatie zijn gefingeerd. Novolex heeft geen verantwoordelijkheid voor deze representaties.</em>
+    </p>
 
     <dl class="meta">
       <div>
@@ -57,7 +63,7 @@
       </div>
       <div>
         <dt>Stack</dt>
-        <dd>JavaScript, Leaflet</dd>
+        <dd>JavaScript, Leaflet, CARTO</dd>
       </div>
       <div>
         <dt>Context</dt>
@@ -85,36 +91,80 @@
     </div>
 
     <h2>Wat ik heb gebouwd</h2>
+    <p>
+      Een web-app die intern <strong>Sales · Margin Map</strong> heet. De
+      distributiecentra van Novolex staan als punten op een Leaflet-kaart, en
+      dezelfde dataset is op meerdere manieren te bekijken en te filteren.
+    </p>
+
+    <p><strong>De kaart en zijn weergaven</strong></p>
     <ul>
-      <li>Een interactieve kaart die in de browser draait, gebouwd met Leaflet.</li>
-      <li>Sales per regio en per vestiging, weergegeven als markers en gekleurde
-        gebieden, zodat sterke en zwakke regio's meteen opvallen.</li>
-      <li>Hover en klik voor detail per locatie: omzet, aantal klanten, trend
-        ten opzichte van de vorige periode.</li>
-      <li>Een legenda en filters op periode en productlijn, zodat je de kaart op
-        je eigen vraag kunt afstellen.</li>
-      <li>De dataverwerking van de ruwe export naar iets wat de kaart kan tonen:
-        opschonen, koppelen aan coördinaten en omzetten naar GeoJSON.</li>
+      <li>Alle DC's door heel Europa op één kaart, met keuze uit drie
+        ondergronden: licht, donker en OSM.</li>
+      <li>Vier weergaven van dezelfde cijfers: <em>bubbels</em> (grootte = omzet),
+        <em>staven</em> (marge tegenover de vorige periode), <em>heatmap</em>, en
+        een sorteerbare <em>tabel</em>.</li>
+      <li>In de stavenweergave staat per DC een 3D-staaf: grijs is de vorige
+        periode, de gekleurde kop is groen bij groei en rood bij daling, de
+        hoogte is de marge in euro's en de breedte het volume.</li>
+    </ul>
+
+    <p><strong>Filteren en inzoomen</strong></p>
+    <ul>
+      <li>Wisselen tussen productlijnen — Wrappers, Liners of allebei.</li>
+      <li>Filteren op alleen groeiers of alleen dalers, plus een schuif voor de
+        minimale marge (%) om zwakke DC's uit beeld te halen.</li>
+      <li>Een zoekveld om direct naar een DC te springen, en één Reset-knop die
+        alles terugzet.</li>
+      <li>Een KPI-balk bovenin — omzet, marge €, marge %, kosten, volume, laagste
+        marge — die meerekent met de filters die aanstaan.</li>
     </ul>
 
     <figure>
-      <div class="ph ph--wide">svg/novolex-sales-detail.png<br>screenshot (dummydata)</div>
+      <img src="svg/Schermafbeelding%202026-08-31%20115256.png"
+           alt="Tabelweergave 'DC Overzicht': een sorteerbare tabel met per DC de omzet, marge %, verandering in marge, verandering in omzet en het volume.">
       <figcaption>
-        Alle beelden op deze pagina gebruiken dummydata — geen echte cijfers,
-        klantnamen of vestigingen van Novolex.
+        De tabelweergave: dezelfde data als op de kaart, maar sorteerbaar op
+        omzet, marge of verandering — om DC's snel te rangschikken.
       </figcaption>
     </figure>
+
+    <p><strong>Detail per DC</strong></p>
+    <ul>
+      <li>Klik op een DC voor een zijpaneel met een marge-donut, omzet en volume,
+        de kosten-marge-verhouding, omzet per weekdag (huidige tegenover vorige
+        periode), de periodehistorie (P1–P3) en de gekoppelde klanten en items.</li>
+      <li>Een compacte hover-popup met de kerncijfers en de verandering in
+        procentpunten marge (pp) en in omzet.</li>
+      <li>Een "Dalers / Stijgers"-lijst linksonder met de grootste
+        marge-verschuivingen, met land erbij en de marge-overgang
+        (bijvoorbeeld 28,7% → 24,2%).</li>
+    </ul>
+
+    <figure>
+      <img src="svg/Schermafbeelding%202026-08-31%20115656.png"
+           alt="Hover-popup bij een DC: groei tegenover de vorige periode in procentpunten marge en procent omzet, met daaronder marge %, vorige marge, omzet en volume.">
+      <figcaption>
+        De hover-popup bij een DC — marge nu tegenover de vorige periode, in
+        procentpunten, met omzet en volume. Cijfers zijn dummydata.
+      </figcaption>
+    </figure>
+
+    <p><strong>Data erin</strong></p>
+    <ul>
+      <li>Met "Upload Excel" laadt Novolex zijn eigen export in en rekent de kaart
+        alles opnieuw door — geen tussenstap in een apart BI-tool.</li>
+      <li>De ruwe export wordt opgeschoond en aan coördinaten gekoppeld voordat de
+        kaart hem toont.</li>
+    </ul>
 
     <h2>Wat ik eruit heb geleerd</h2>
 
     <div class="callout">
       <p>
         Datavisualisatie is vooral een oefening in wéglaten. De eerste versie van
-        de kaart probeerde alles tegelijk te tonen en werd daardoor onleesbaar —
-        pas toen ik terugbracht naar één vraag per weergave ("waar zit de omzet?")
-        werd het bruikbaar. En dat "bruikbaar" kon ik niet zelf bepalen: het bleek
-        pas te kloppen toen het salesteam er zelf mee zat te klikken en er
-        conclusies uit trok die ik niet had voorzien.
+        de kaart probeerde alles tegelijk te tonen en werd daardoor onleesbaar. Het gebruik van datakanalen (kleur, grootte, hoogte, breedte) en het aanbieden van meerdere weergaven maakte de data pas echt toegankelijk. zo is het mogelijk om in één oogopslag te zien waar de omzet zit, en waar de kenlpunten in het bedrijf liggen.
+        
       </p>
     </div>
 
