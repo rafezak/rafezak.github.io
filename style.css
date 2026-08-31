@@ -115,6 +115,15 @@ section > h2{
 .cards{ display:grid; gap:20px; }
 @media(min-width:720px){ .cards{ grid-template-columns:repeat(2,1fr); } }
 
+/* Werk opgedeeld in ICT / Game / Animatie: elke groep een klein label-kopje
+   in dezelfde stijl als de sectiekop, maar een niveau lager. */
+.werk-group{ margin-top:40px; }
+.werk-group:first-of-type{ margin-top:0; }
+.werk-group h3{
+  font-size:13px; text-transform:uppercase; letter-spacing:.12em;
+  color:var(--muted); font-weight:700; margin:0 0 16px;
+}
+
 .card{
   background:var(--surface); border:1px solid var(--line);
   border-radius:var(--radius); overflow:hidden;

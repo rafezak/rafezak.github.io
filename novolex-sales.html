@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Novolex — sales op de kaart — Raf Quaden</title>
+<meta name="description" content="Opdracht voor Novolex: een interactieve kaart die sales-data per regio plot, zodat het salesteam in één oogopslag ziet waar de omzet zit. Gebouwd met JavaScript en Leaflet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  ============================================================
+  LET OP — voor je deze pagina publiceert:
+
+  Alle screenshots op deze pagina gebruiken DUMMYDATA. Zet nooit
+  echte sales-cijfers, klantnamen, vestigingsadressen of andere
+  bedrijfsgegevens van Novolex online — ook niet gedeeltelijk in
+  een hoekje van een screenshot. Bij twijfel: eerst overleggen
+  met Novolex.
+  ============================================================
+-->
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Raf Quaden</a>
+    <nav class="nav">
+      <a href="index.html#werk">Werk</a>
+      <a href="index.html#over">Over</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap case-header">
+    <a class="back" href="index.html">← Alle projecten</a>
+    <h1>Novolex — sales op de kaart</h1>
+    <p class="sub">
+      Een interactieve kaart die de sales-data van Novolex per regio plot, zodat
+      het salesteam in één oogopslag ziet waar de omzet zit — en waar niet.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="ph ph--hero">svg/novolex-sales-kaart.png<br>screenshot (dummydata)</div>
+
+    <dl class="meta">
+      <div>
+        <dt>Rol</dt>
+        <dd>Ontwerp, dataverwerking &amp; front-end</dd>
+      </div>
+      <div>
+        <dt>Periode</dt>
+        <dd>2025</dd>
+      </div>
+      <div>
+        <dt>Stack</dt>
+        <dd>JavaScript, Leaflet</dd>
+      </div>
+      <div>
+        <dt>Context</dt>
+        <dd>Opdracht voor Novolex</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="wrap prose">
+
+    <h2>De opdracht</h2>
+    <p>
+      Novolex had zijn sales-data netjes op orde — in spreadsheets. Rijen per
+      order, kolommen per maand, alles klopte. Wat ontbrak was het overzicht:
+      een tabel vertelt je hoevéél er verkocht is, maar niet zo makkelijk
+      wáár. En juist dat laatste is wat een salesteam nodig heeft om te bepalen
+      waar het zijn tijd insteekt.
+    </p>
+
+    <div class="callout">
+      <p>
+        <strong>De vraag:</strong> maak de geografische spreiding van de omzet in
+        één blik leesbaar, zonder dat iemand eerst een draaitabel hoeft te bouwen.
+      </p>
+    </div>
+
+    <h2>Wat ik heb gebouwd</h2>
+    <ul>
+      <li>Een interactieve kaart die in de browser draait, gebouwd met Leaflet.</li>
+      <li>Sales per regio en per vestiging, weergegeven als markers en gekleurde
+        gebieden, zodat sterke en zwakke regio's meteen opvallen.</li>
+      <li>Hover en klik voor detail per locatie: omzet, aantal klanten, trend
+        ten opzichte van de vorige periode.</li>
+      <li>Een legenda en filters op periode en productlijn, zodat je de kaart op
+        je eigen vraag kunt afstellen.</li>
+      <li>De dataverwerking van de ruwe export naar iets wat de kaart kan tonen:
+        opschonen, koppelen aan coördinaten en omzetten naar GeoJSON.</li>
+    </ul>
+
+    <figure>
+      <div class="ph ph--wide">svg/novolex-sales-detail.png<br>screenshot (dummydata)</div>
+      <figcaption>
+        Alle beelden op deze pagina gebruiken dummydata — geen echte cijfers,
+        klantnamen of vestigingen van Novolex.
+      </figcaption>
+    </figure>
+
+    <h2>Wat ik eruit heb geleerd</h2>
+
+    <div class="callout">
+      <p>
+        Datavisualisatie is vooral een oefening in wéglaten. De eerste versie van
+        de kaart probeerde alles tegelijk te tonen en werd daardoor onleesbaar —
+        pas toen ik terugbracht naar één vraag per weergave ("waar zit de omzet?")
+        werd het bruikbaar. En dat "bruikbaar" kon ik niet zelf bepalen: het bleek
+        pas te kloppen toen het salesteam er zelf mee zat te klikken en er
+        conclusies uit trok die ik niet had voorzien.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="wrap">
+    <nav class="pager">
+      <a href="index.html"><span>←</span> Alle projecten</a>
+      <a href="childjourney.html">Childjourney <span>→</span></a>
+    </nav>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Raf Quaden · Maastricht</div>
+    <div class="links">
+      <a href="mailto:raf.quaden@gmail.com">raf.quaden@gmail.com</a>
+      <a href="https://github.com/rafezak">GitHub</a>
+      <a href="https://rafezak.itch.io">itch.io</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
