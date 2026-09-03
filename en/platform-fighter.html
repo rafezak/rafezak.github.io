@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Another Platform Fighter — Raf Quaden</title>
+<meta name="description" content="A lightweight platform fighter for mobile, built in Unity. A study in combat that has weight, on a screen with no buttons.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Raf Quaden</a>
+    <nav class="nav">
+      <a href="index.html#werk">Work</a>
+      <a href="index.html#over">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap lang-switch">
+    <a class="btn" href="../platform-fighter.html" hreflang="nl">🇳🇱 NL</a>
+  </div>
+
+  <div class="wrap case-header">
+    <a class="back" href="index.html">← All projects</a>
+    <h1>Another Platform Fighter</h1>
+    <p class="sub">
+      A lightweight platform fighter for mobile. A study in combat that has weight, on a
+      screen with no buttons.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/hWwpklzH1oU"
+        title="Another Platform Fighter — trailer"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+
+    <dl class="meta">
+      <div>
+        <dt>Role</dt>
+        <dd>Everything — design, code, animation</dd>
+      </div>
+      <div>
+        <dt>Period</dt>
+        <dd>2025 – 2026</dd>
+      </div>
+      <div>
+        <dt>Stack</dt>
+        <dd>Unity, C#</dd>
+      </div>
+      <div>
+        <dt>Playable</dt>
+        <dd><a href="https://rafezak.itch.io/another-platform-fighter">on itch.io</a></dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="wrap prose">
+
+    <h2>What it's about</h2>
+    <p>
+      A platform fighter lives or dies by how a hit feels. Playing that same fight on a phone
+      makes that harder: no buttons with resistance, no precision, and a thumb covering half
+      the screen. So the question driving this project is:
+      <strong>how do you give an attack weight when the player feels nothing under their
+      fingers?</strong>
+    </p>
+    <p>
+      The answer isn't in any single thing but in the stacking of small effects — timing,
+      delay at the moment of impact, how far a character flies back, how much control you
+      briefly lose. Exactly the kind of system you only get right by playing and tweaking.
+    </p>
+
+    <figure>
+      <img class="figure-img--pixel zoomable" src="../svg/w+mnfP.png" alt="Tutorial screen: the same attack button produces a different attack depending on the direction you're holding.">
+      <figcaption>Directional inputs, like smash attacks and up-B/down-B in Super Smash Bros: the same button gives a different attack depending on the direction you hold. Each variant has its own situational advantage.</figcaption>
+    </figure>
+
+    <h2>What I built</h2>
+    <ul>
+      <li>The combat system in Unity and C#, including hit detection, knockback and recovery frames.</li>
+      <li>Controls that work on a touchscreen, without giving up on precision entirely.</li>
+      <li>Character animation, tuned to how the attacks feel.</li>
+      <li>The whole thing kept light enough to run smoothly on ordinary phones.</li>
+    </ul>
+
+    <figure>
+      <img class="figure-img--pixel zoomable" src="../svg/CrhQVG.png" alt="Tutorial screen: overhead attacks are blocked standing, low attacks by crouching; your character shows whether you got hit high or low.">
+      <figcaption>A high-low blocking system, like in many fighting games: overhead attacks are blocked standing, low attacks by crouching. Most attacks hit 'mid', meaning either option blocks the attack — your character visibly flinches high or low, so you can adjust.</figcaption>
+    </figure>
+
+    <h2>What I learned</h2>
+
+    <div class="callout">
+      <p>
+        Making a fighting game feel good comes down to a lot of small things: timing,
+        animation, hit feedback, recovery frames, sound, visual effects, hitstop,
+        camera-shake. Everything contributes to how an attack feels. It's a system you can
+        only get right through testing and critical feedback.
+        On top of that, a mobile layout is an extra layer of complexity you have to solve.
+        How many buttons can you fit on a screen without it feeling too busy? These questions
+        are crucial to the design.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="wrap">
+    <nav class="pager">
+      <a href="childjourney.html"><span>←</span> Childjourney</a>
+      <a href="../tuzzle.html">Tuzzle <span>→</span></a>
+    </nav>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Raf Quaden · Maastricht</div>
+    <div class="links">
+      <a href="mailto:raf.quaden@gmail.com">raf.quaden@gmail.com</a>
+      <a href="https://github.com/rafezak">GitHub</a>
+      <a href="https://rafezak.itch.io">itch.io</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/lightbox.js" defer></script>
+
+</body>
+</html>

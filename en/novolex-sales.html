@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Novolex — sales on the map — Raf Quaden</title>
+<meta name="description" content="A commissioned project for Novolex: an interactive map that plots sales data by region, so the sales team can see where the revenue is at a glance. Built with JavaScript and Leaflet.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!--
+  ============================================================
+  NOTE — before publishing this page:
+
+  All screenshots on this page use DUMMY DATA. Never put real
+  sales figures, customer names, site addresses, or other
+  Novolex business information online — not even partially, in
+  a corner of a screenshot. When in doubt: check with Novolex
+  first.
+  ============================================================
+-->
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Raf Quaden</a>
+    <nav class="nav">
+      <a href="index.html#werk">Work</a>
+      <a href="index.html#over">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap lang-switch">
+    <a class="btn" href="../novolex-sales.html" hreflang="nl">🇳🇱 NL</a>
+  </div>
+
+  <div class="wrap case-header">
+    <a class="back" href="index.html">← All projects</a>
+    <h1>Novolex — sales on the map</h1>
+    <p class="sub">
+      An interactive map that plots Novolex's sales and margin figures per distribution
+      centre, so the sales team can see at a glance where the revenue and the margin are —
+      and where they aren't.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <img class="zoomable" src="../svg/Schermafbeelding%202026-08-31%20115219.png"
+         alt="Sales · Margin Map in bar view: distribution centres across Europe with a 3D bar per DC, a KPI bar at the top, a list of decliners at the bottom left, and a detail panel on the right."
+         style="border-radius:var(--radius); border:1px solid var(--line); margin:0 0 8px;">
+    <p style="font-size:14px; color:var(--muted); margin:0 0 12px;">
+      <em>All figures in the screenshots on this page are dummy data. Customer data, figures, and other business information are fictional. Novolex bears no responsibility for these representations.</em>
+    </p>
+
+    <dl class="meta">
+      <div>
+        <dt>Role</dt>
+        <dd>Design, data processing &amp; front-end</dd>
+      </div>
+      <div>
+        <dt>Period</dt>
+        <dd>2025</dd>
+      </div>
+      <div>
+        <dt>Stack</dt>
+        <dd>JavaScript, Leaflet, CARTO</dd>
+      </div>
+      <div>
+        <dt>Context</dt>
+        <dd>Commissioned by Novolex</dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="wrap prose">
+
+    <h2>The brief</h2>
+    <p>
+      Novolex had its sales data neatly in order — in spreadsheets. Rows per order, columns
+      per month, everything checked out. What was missing was the overview: a table tells you
+      how much was sold, but not so easily where. And that's exactly what a sales team needs
+      to decide where to spend its time.
+    </p>
+
+    <div class="callout">
+      <p>
+        <strong>The brief:</strong> make the geographic spread of revenue readable at a
+        glance, without anyone first having to build a pivot table.
+      </p>
+    </div>
+
+    <h2>What I built</h2>
+    <p>
+      A web app internally called <strong>Sales · Margin Map</strong>. Novolex's distribution
+      centres sit as points on a Leaflet map, and the same dataset can be viewed and filtered
+      in several ways.
+    </p>
+
+    <p><strong>The map and its views</strong></p>
+    <ul>
+      <li>All DCs across Europe on one map, with a choice of three basemaps: light, dark,
+        and OSM.</li>
+      <li>Four views of the same figures: <em>bubbles</em> (size = revenue),
+        <em>bars</em> (margin vs. the previous period), <em>heatmap</em>, and a sortable
+        <em>table</em>.</li>
+      <li>In the bar view, each DC gets a 3D bar: grey is the previous period, the coloured
+        top is green for growth and red for decline, the height is the margin in euros and
+        the width is the volume.</li>
+    </ul>
+
+    <p><strong>Filtering and zooming</strong></p>
+    <ul>
+      <li>Switching between product lines — Wrappers, Liners, or both.</li>
+      <li>Filtering to growers only or decliners only, plus a slider for the minimum margin
+        (%) to hide weak DCs.</li>
+      <li>A search field to jump straight to a DC, and one Reset button that puts everything
+        back.</li>
+      <li>A KPI bar at the top — revenue, margin €, margin %, cost, volume, lowest margin —
+        that recalculates with whatever filters are active.</li>
+    </ul>
+
+    <figure>
+      <img class="zoomable" src="../svg/Schermafbeelding%202026-08-31%20115256.png"
+           alt="'DC Overview' table view: a sortable table with, per DC, revenue, margin %, change in margin, change in revenue, and volume.">
+      <figcaption>
+        The table view: the same data as on the map, but sortable by revenue, margin, or
+        change — to rank DCs quickly.
+      </figcaption>
+    </figure>
+
+    <p><strong>Detail per DC</strong></p>
+    <ul>
+      <li>Clicking a DC opens a side panel with a margin donut, revenue and volume, the
+        cost-to-margin ratio, revenue by weekday (current vs. previous period), the period
+        history (P1–P3), and the linked customers and items.</li>
+      <li>A compact hover popup with the key figures and the change in margin percentage
+        points (pp) and in revenue.</li>
+      <li>A "Decliners / Risers" list at the bottom left with the biggest margin shifts,
+        including country and the margin transition (for example 28.7% → 24.2%).</li>
+    </ul>
+
+    <figure>
+      <img class="zoomable" src="../svg/Schermafbeelding%202026-08-31%20115656.png"
+           alt="Hover popup for a DC: growth vs. the previous period in margin percentage points and revenue percent, with margin %, previous margin, revenue and volume below.">
+      <figcaption>
+        The hover popup for a DC — margin now vs. the previous period, in percentage points,
+        with revenue and volume. Figures are dummy data.
+      </figcaption>
+    </figure>
+
+    <p><strong>Getting data in</strong></p>
+    <ul>
+      <li>With "Upload Excel", Novolex loads its own export and the map recalculates
+        everything — no separate step through a BI tool.</li>
+      <li>The raw export is cleaned up and matched to coordinates before the map displays it.</li>
+    </ul>
+
+    <h2>What I learned</h2>
+
+    <div class="callout">
+      <p>
+        Data visualization is mostly an exercise in leaving things out. The first version of
+        the map tried to show everything at once and became unreadable as a result. Using
+        visual channels (colour, size, height, width) and offering multiple views is what
+        actually made the data accessible — so you can see at a glance where the revenue
+        sits, and where the pressure points in the business are.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="wrap">
+    <nav class="pager">
+      <a href="index.html"><span>←</span> All projects</a>
+      <a href="childjourney.html">Childjourney <span>→</span></a>
+    </nav>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Raf Quaden · Maastricht</div>
+    <div class="links">
+      <a href="mailto:raf.quaden@gmail.com">raf.quaden@gmail.com</a>
+      <a href="https://github.com/rafezak">GitHub</a>
+      <a href="https://rafezak.itch.io">itch.io</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/lightbox.js" defer></script>
+
+</body>
+</html>

@@ -64,9 +64,19 @@ img{ max-width:100%; display:block; }
 }
 .brand{ font-weight:700; color:var(--ink); letter-spacing:-.01em; }
 .brand:hover{ text-decoration:none; color:var(--accent); }
-.nav{ display:flex; gap:20px; font-size:15px; }
+.nav{ display:flex; align-items:center; gap:20px; font-size:15px; }
 .nav a{ color:var(--muted); }
 .nav a:hover{ color:var(--accent); text-decoration:none; }
+
+/* ---------------- language switch ---------------- */
+/* Onder de navbar, boven aan de content (in dezelfde .wrap-kolom, niet
+   edge-to-edge zoals de header). Hergebruikt bewust de .btn-vormtaal —
+   rand, padding, ronde hoeken, hover-kleur — dezelfde affordance-signalen
+   als "Bekijk mijn cv" / "GitHub" elders op de site, zodat meteen duidelijk
+   is dat dit klikbaar is, zonder een nieuw visueel patroon te verzinnen. */
+
+.lang-switch{ display:flex; justify-content:flex-end; padding:20px 0 0; }
+.lang-switch .btn{ display:inline-flex; align-items:center; gap:6px; }
 
 /* ---------------- hero ---------------- */
 
@@ -174,6 +184,10 @@ section > h2{
 .video-embed iframe{
   position:absolute; inset:0; width:100%; height:100%; border:0; display:block;
 }
+.video-embed video{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:contain; background:#000;
+}
 
 /* ---------------- childjourney hero ---------------- */
 /* worldanim.svg als achtergrond, playerfinal.svg (inline, i.p.v. <img>) aan
@@ -275,3 +289,41 @@ figcaption{ font-size:14px; color:var(--muted); margin-top:8px; }
   align-items:center; justify-content:space-between;
 }
 .site-footer .links{ display:flex; flex-wrap:wrap; gap:18px; }
+
+/* ---------------- zoomable screenshots (lightbox) ---------------- */
+/* js/lightbox.js wrapt elke <img class="zoomable"> hierin en voegt de
+   knop toe; hier staat alleen de styling. */
+
+.zoomable-wrap{ position:relative; display:block; }
+.zoomable-btn{
+  position:absolute; right:10px; bottom:10px;
+  display:flex; align-items:center; justify-content:center;
+  width:34px; height:34px; border-radius:8px;
+  border:1px solid color-mix(in srgb, #fff 20%, transparent);
+  background:color-mix(in srgb, #000 55%, transparent);
+  color:#fff; cursor:pointer; opacity:.85;
+  transition:opacity .15s ease, background .15s ease;
+}
+.zoomable-btn:hover{ opacity:1; background:color-mix(in srgb, #000 72%, transparent); }
+
+.lightbox{ position:fixed; inset:0; z-index:200; display:flex; }
+.lightbox[hidden]{ display:none; }
+.lightbox__backdrop{
+  position:absolute; inset:0;
+  background:color-mix(in srgb, #000 82%, transparent);
+}
+.lightbox__img{
+  position:relative; z-index:1; margin:auto;
+  max-width:94vw; max-height:92vh;
+  border-radius:var(--radius);
+  box-shadow:0 24px 60px color-mix(in srgb, #000 45%, transparent);
+}
+.lightbox__close{
+  position:absolute; top:16px; right:16px; z-index:2;
+  display:flex; align-items:center; justify-content:center;
+  width:38px; height:38px; border-radius:8px;
+  border:1px solid color-mix(in srgb, #fff 25%, transparent);
+  background:color-mix(in srgb, #000 55%, transparent); color:#fff;
+  font-size:18px; line-height:1; cursor:pointer;
+}
+.lightbox__close:hover{ background:color-mix(in srgb, #000 75%, transparent); }
