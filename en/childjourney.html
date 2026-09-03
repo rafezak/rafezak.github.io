@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Childjourney — Raf Quaden</title>
+<title>Childjourney · Raf Quaden</title>
 <meta name="description" content="A serious game in React and TypeScript for children with juvenile dermatomyositis, built so they can do their exercises at home.">
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -11,13 +11,13 @@
 
 <!--
   ============================================================
-  NOTE — before publishing this page:
+  NOTE: before publishing this page:
 
   This is about healthcare software for children. Ask the
   Data Intelligence research group and Limburg Meet Zorg for
   permission before putting screenshots or details online.
   Never publish images that show patient data, real names, or
-  identifiable children — not even in the corner of a screenshot.
+  identifiable children, not even in the corner of a screenshot.
   ============================================================
 -->
 
@@ -51,7 +51,7 @@
     <div class="video-embed">
       <iframe
         src="https://www.youtube-nocookie.com/embed/vko_lexMmiQ"
-        title="Childjourney — trailer"
+        title="Childjourney trailer"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
@@ -89,7 +89,7 @@
     <p>
       Except doing exercises at home is hard. They're boring, sometimes painful, and there's
       no physiotherapist standing next to you cheering you on. Exactly the kind of behaviour
-      that falls apart after two weeks — and with this condition, sticking with it is exactly
+      that falls apart after two weeks, and with this condition, sticking with it is exactly
       what matters.
     </p>
 
@@ -111,7 +111,7 @@
     <p>
       That's why Childjourney is built as a web game in <strong>React and TypeScript</strong>:
       open a link and play. No installation, no extra hardware, works on the laptop or tablet
-      that's already there. For the animation I chose <strong>SVG</strong> — sharp on any
+      that's already there. For the animation I chose <strong>SVG</strong>: sharp on any
       screen, light enough for older devices, and directly controllable from code.
     </p>
 
@@ -247,7 +247,7 @@
           </svg>
         </div>
       </div>
-      <figcaption>Childjourney's character — moves across the world map, with a small surprise if you hover over it.</figcaption>
+      <figcaption>Childjourney's character moves across the world map, with a small surprise if you hover over it.</figcaption>
     </figure>
 
     <h2>What I built</h2>
@@ -301,7 +301,7 @@
 <script>
   // Plays the character's built-in SVG animation as soon as you hover over it.
   // The animation itself is set to begin="indefinite" and is started here via
-  // beginElement() — that way it always plays out in full (even if the mouse
+  // beginElement(). That way it always plays out in full (even if the mouse
   // leaves early) and simply restarts on the next hover.
   (function(){
     var trigger = document.querySelector('.cj-hero__player');
