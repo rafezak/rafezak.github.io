@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overclash · Raf Quaden</title>
+<meta name="description" content="Overclash: a monster-catching RPG with real-time arena combat, running in the browser. Vibecoded: I design and direct, AI writes the code and makes the art. With its own engines for combat, destruction, a map maker and an art importer.">
+<meta property="og:title" content="Overclash · Raf Quaden">
+<meta property="og:description" content="Monster-catching RPG with real-time combat, custom engines and a map maker. Playable in the browser.">
+<meta property="og:image" content="https://rafezak.github.io/overclash/card.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* This page only: autoplaying clips that behave like gifs, and a side-by-side grid. */
+  .clip{ position:relative; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:#0d0b09; aspect-ratio:16/9; }
+  .clip video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .clip--ui video{ object-fit:contain; }
+  .duo{ display:grid; gap:14px; margin:32px 0; }
+  @media(min-width:720px){ .duo{ grid-template-columns:1fr 1fr; } }
+  .duo figure{ margin:0; }
+  .wide{ margin:32px 0; }
+  .wide figure{ margin:0; }
+  .px{ image-rendering:pixelated; }
+  .prose.tight{ padding-bottom:4px; }
+  .fit169{ aspect-ratio:16/9; object-fit:contain; background:#0d0b09; width:100%; }
+  .pills{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px; }
+  .stat{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:10px 14px; font-size:14px; color:var(--muted); }
+  .stat b{ display:block; font-size:22px; color:var(--ink); letter-spacing:-.02em; }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:10px; margin:0 0 28px; }
+  .engine{ font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--accent); font-weight:700; margin:52px 0 4px; }
+  .prose .engine + h2{ margin-top:0; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Raf Quaden</a>
+    <nav class="nav">
+      <a href="index.html#werk">Work</a>
+      <a href="index.html#over">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap lang-switch">
+    <a class="btn" href="../overclash.html" hreflang="nl">🇳🇱 NL</a>
+  </div>
+
+  <div class="wrap case-header">
+    <a class="back" href="index.html">← All projects</a>
+    <h1>Overclash</h1>
+    <p class="sub">
+      A monster-catching RPG with real-time arena combat, playable in the browser.
+      Fully vibecoded: I design, direct and test, AI writes the code and makes the art.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn--primary" href="https://rafezak.github.io/OverClash/" target="_blank" rel="noopener">▶ Play in your browser</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="clip">
+      <video src="../overclash/combat-zenyth.mp4" poster="../overclash/combat-zenyth-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Battle: Zenyth vs Kazuchi"></video>
+    </div>
+    <p style="font-size:14px;color:var(--muted);margin:8px 0 0">Real gameplay, no editing: Zenyth vs Kazuchi, both controlled by the AI.</p>
+
+    <dl class="meta" style="margin-top:28px">
+      <div><dt>Role</dt><dd>Game design, art direction, directing AI, testing</dd></div>
+      <div><dt>Period</dt><dd>2026</dd></div>
+      <div><dt>Stack</dt><dd>JavaScript, Canvas 2D, Claude Code, ChatGPT</dd></div>
+      <div><dt>Playable</dt><dd><a href="https://rafezak.github.io/OverClash/">in the browser</a></dd></div>
+    </dl>
+  </div>
+
+  <div class="wrap prose tight">
+
+    <div class="pills">
+      <div class="stat"><b>23</b>monsters</div>
+      <div class="stat"><b>5</b>custom engines</div>
+      <div class="stat"><b>77</b>source files</div>
+      <div class="stat"><b>1</b>HTML file</div>
+      <div class="stat"><b>34</b>automated tests</div>
+    </div>
+
+    <h2>What it is about</h2>
+    <p>
+      Overclash is a top-down monster catcher in the spirit of the old GBA games, but with battles
+      that happen in real time: you move around an arena, build combos and dodge attacks.
+      The whole game, including a town to walk around in, runs as a single HTML file in the browser,
+      with no game engine underneath.
+    </p>
+    <p>
+      What makes it special is how it is made. <strong>I don't type the code myself.</strong>
+      I work as game designer and art director: I describe what needs to be built, judge every version
+      on screenshots and how it plays, and steer. Claude Code writes and tests the code, ChatGPT draws
+      the art. Vibecoding, but with fixed ground rules I set from the start:
+    </p>
+    <ul>
+      <li>It stays one file that runs smoothly on a low-end laptop.</li>
+      <li>Saves and user-made maps keep working, version after version.</li>
+      <li>No silent changes to the balance of existing moves: ask first.</li>
+      <li>Nothing is done until it is built, tested and checked on screenshots.</li>
+    </ul>
+    <p>
+      The result is more than a game: five tools that feed each other. Below, one by one.
+    </p>
+
+    <!-- ================= combat ================= -->
+    <div class="engine">Engine 1</div>
+    <h2>Real-time combat</h2>
+    <p>
+      Every monster has light and heavy attacks you chain into combo routes
+      (JJJJJ, JKJKJ, JJJKK…), four special moves, an ultimate and its own typing.
+      The arena reacts: craters, cracks and debris stay where an attack landed.
+      AI opponents use the same moveset as the player.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="duo">
+      <figure>
+        <div class="clip"><video src="../overclash/combat-noxdrath.mp4" poster="../overclash/combat-noxdrath-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Noxdrath vs Gushlo"></video></div>
+        <figcaption>Noxdrath, a heavy dragon, against Gushlo and its water bubbles.</figcaption>
+      </figure>
+      <figure>
+        <div class="clip"><video src="../overclash/combat-embrask.mp4" poster="../overclash/combat-embrask-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Embrask vs Kodo"></video></div>
+        <figcaption>Embrask peppers Kodo, a melee fighter, with fire from range.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="wrap prose tight">
+    <!-- ================= destruction ================= -->
+    <div class="engine">Engine 2</div>
+    <h2>Destruction engine and Destruction Lab</h2>
+    <p>
+      A hit should leave a mark. The destruction engine draws craters, cracks, pillars breaking out of the
+      ground, residue and its own pixel particle system, all in the same gritty pixel style.
+      To tune it without touching code every time, I had an editor built for it:
+      the <strong>Destruction Lab</strong>.
+    </p>
+    <p>
+      In the Lab you stamp effects into the arena and tune them with sliders. In Moves mode you play a move
+      frame by frame on a timeline, click a projectile and change its colour, glow, trail or impact.
+      Edit something on another frame and a keyframe is set automatically, like in an animation program.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="duo">
+      <figure>
+        <div class="clip clip--ui"><video src="../overclash/lab-destruction.mp4" poster="../overclash/lab-destruction-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Stamping destruction in the Lab"></video></div>
+        <figcaption>Stamping craters, cracks and pillars in the Lab.</figcaption>
+      </figure>
+      <figure>
+        <div class="clip clip--ui"><video src="../overclash/lab-moves.mp4" poster="../overclash/lab-moves-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Editing moves on a timeline"></video></div>
+        <figcaption>Moves mode: Shadow Ball and a five-hit combo on the timeline, with every built-in effect as its own track.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      <img class="zoomable" src="../overclash/lab-timeline.jpg" alt="Destruction Lab with a combo's timeline open" loading="lazy">
+      <figcaption>Every effect of a move is its own row on the timeline, clickable and editable.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap prose tight">
+    <!-- ================= overworld ================= -->
+    <div class="engine">Engine 3</div>
+    <h2>The overworld</h2>
+    <p>
+      Hollowmere, the starting town, runs on a custom tile renderer with light from lamps and windows,
+      wind moving through grass and trees, chimney smoke and people walking around.
+      Paths and shores blend smoothly instead of in hard blocks.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="clip"><video src="../overclash/town-code.mp4" poster="../overclash/town-code-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Walking around Hollowmere"></video></div>
+    <p style="font-size:14px;color:var(--muted);margin:8px 0 0">Hollowmere with art drawn in code.</p>
+  </div>
+
+  <div class="wrap prose tight" style="padding-top:8px">
+    <!-- ================= map maker ================= -->
+    <div class="engine">Engine 4</div>
+    <h2>Map maker</h2>
+    <p>
+      So that I (and a teammate) can make new areas without code, the game has a full map maker.
+      You paint terrain with a brush, rectangle or fill, place trees, buildings and NPCs, build height
+      with cliffs, stairs and ledges, make cutscenes and stitch maps together on a world map.
+      One click and you are playing your map.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="duo">
+      <figure>
+        <div class="clip clip--ui"><video src="../overclash/mapmaker.mp4" poster="../overclash/mapmaker-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Building a map in the map maker"></video></div>
+        <figcaption>Building a map: paths, a pond with a boardwalk, a raised area with stairs, and trees (2× speed).</figcaption>
+      </figure>
+      <figure>
+        <div class="clip"><video src="../overclash/cliffs-ledge.mp4" poster="../overclash/cliffs-ledge-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Cliffs and a ledge you hop down"></video></div>
+        <figcaption>Height in the game: cliffs, stairs and a ledge you hop down.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="wrap prose tight">
+    <!-- ================= art pipeline ================= -->
+    <div class="engine">Engine 5</div>
+    <h2>From ChatGPT image to game asset</h2>
+    <p>
+      I am not a pixel artist. ChatGPT can make pixel art, but it arrives messy: blurry edges,
+      'fake pixels' that don't sit on a grid, a magenta background bleeding through, and every image
+      with its own colours. Putting it straight into the game gave glitchy, cluttered sprites.
+    </p>
+    <p>
+      So the map maker has an <strong>art importer</strong>. Drop in an image and it finds the real pixel
+      size, removes the background and magenta fringe, snaps everything to a shared palette and makes
+      terrain seamless. A sheet with several assets is cut up automatically. Terrain is painted into the
+      existing shapes, so paths, shores and cliffs keep joining up cleanly. A character becomes an NPC
+      walking in four directions. Light, shadow and height are then done by the engine, so separate
+      ChatGPT images look like one world.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="duo">
+      <figure>
+        <img class="zoomable px fit169" src="../overclash/chatgpt-terrain-sheet.jpg" alt="A terrain sheet from ChatGPT: grass, cobblestones, dirt road and sand" loading="lazy">
+        <figcaption>What ChatGPT delivers: one image with four terrain types.</figcaption>
+      </figure>
+      <figure>
+        <div class="clip clip--ui"><video src="../overclash/importer.mp4" poster="../overclash/importer-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="The art importer with a tree and a character"></video></div>
+        <figcaption>The importer: a tree replaces the oak, a character becomes the player, with a live preview.</figcaption>
+      </figure>
+    </div>
+    <div class="duo">
+      <figure>
+        <img class="zoomable" src="../overclash/town-code.jpg" alt="Hollowmere with code-drawn art" loading="lazy">
+        <figcaption>Before: Hollowmere with art drawn in code.</figcaption>
+      </figure>
+      <figure>
+        <img class="zoomable" src="../overclash/town-chatgpt.jpg" alt="Hollowmere with imported ChatGPT art" loading="lazy">
+        <figcaption>After: the same town with imported grass, paths, trees and player.</figcaption>
+      </figure>
+    </div>
+    <div class="clip"><video src="../overclash/town-chatgpt.mp4" poster="../overclash/town-chatgpt-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Walking around in the ChatGPT art"></video></div>
+    <p style="font-size:14px;color:var(--muted);margin:8px 0 0">Walking around in the new art, with the ChatGPT character as the player.</p>
+  </div>
+
+  <div class="wrap prose" style="padding-top:8px">
+    <h2>How it is built</h2>
+    <ul>
+      <li><strong>One file.</strong> A build script joins 77 JavaScript files into a single HTML file, with no framework or game engine.</li>
+      <li><strong>Test before shipping.</strong> 34 automated browser tests (Playwright) play the game: battles, the map maker, the importer. One fixed test checks that a battle plays out exactly the same after a change, so balance never shifts unnoticed.</li>
+      <li><strong>Live online.</strong> Every change goes through GitHub, and a GitHub Action builds and publishes the game to GitHub Pages automatically.</li>
+      <li><strong>Design documents.</strong> The big systems have a design document, so decisions can be traced and a new session can pick up where the last one stopped.</li>
+    </ul>
+
+    <!-- ============================================================
+         TO BE WRITTEN BY RAF, in your own words (see README):
+         <h2>What I learned</h2>
+         <div class="callout"><p>...</p></div>
+         ============================================================ -->
+  </div>
+
+  <div class="wrap">
+    <nav class="pager">
+      <a href="index.html"><span>←</span> All projects</a>
+      <a href="childjourney.html">Childjourney <span>→</span></a>
+    </nav>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>Raf Quaden · Maastricht</div>
+    <div class="links">
+      <a href="mailto:raf.quaden@gmail.com">raf.quaden@gmail.com</a>
+      <a href="https://github.com/rafezak">GitHub</a>
+      <a href="https://rafezak.itch.io">itch.io</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/lightbox.js" defer></script>
+<script>
+  // Clips play like gifs, but only load once they scroll into view (saves data on mobile).
+  (function(){
+    var vids=document.querySelectorAll('video[data-autoplay]');
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce){vids.forEach(function(v){v.controls=true;});return;}
+    if(!('IntersectionObserver' in window)){vids.forEach(function(v){v.autoplay=true;v.play&&v.play().catch(function(){});});return;}
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+      if(e.isIntersecting){if(v.preload==='none')v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){});}else v.pause();});},{rootMargin:'200px 0px'});
+    vids.forEach(function(v){io.observe(v);});
+  })();
+</script>
+
+</body>
+</html>
