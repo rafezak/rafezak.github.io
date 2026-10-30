@@ -64,9 +64,9 @@
 
   <div class="wrap">
     <div class="clip">
-      <video src="../overclash/combat-zenyth.mp4" poster="../overclash/combat-zenyth-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Battle: Zenyth vs Kazuchi"></video>
+      <video src="../overclash/fight.mp4" poster="../overclash/fight-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Battle: Zenyth vs Kazuchi"></video>
     </div>
-    <p style="font-size:14px;color:var(--muted);margin:8px 0 0">Real gameplay, no editing: Zenyth vs Kazuchi, both controlled by the AI.</p>
+    <p style="font-size:14px;color:var(--muted);margin:8px 0 0">Real gameplay, no editing: Zenyth vs Kazuchi.</p>
 
     <dl class="meta" style="margin-top:28px">
       <div><dt>Role</dt><dd>Game design, art direction, directing AI, testing</dd></div>
@@ -121,16 +121,10 @@
   </div>
 
   <div class="wrap">
-    <div class="duo">
-      <figure>
-        <div class="clip"><video src="../overclash/combat-noxdrath.mp4" poster="../overclash/combat-noxdrath-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Noxdrath vs Gushlo"></video></div>
-        <figcaption>Noxdrath, a heavy dragon, against Gushlo and its water bubbles.</figcaption>
-      </figure>
-      <figure>
-        <div class="clip"><video src="../overclash/combat-embrask.mp4" poster="../overclash/combat-embrask-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Embrask vs Kodo"></video></div>
-        <figcaption>Embrask peppers Kodo, a melee fighter, with fire from range.</figcaption>
-      </figure>
-    </div>
+    <figure class="wide">
+      <div class="clip"><video src="../overclash/combat-embrask.mp4" poster="../overclash/combat-embrask-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Embrask vs Kodo"></video></div>
+      <figcaption>Embrask peppers Kodo, a melee fighter, with fire from range.</figcaption>
+    </figure>
   </div>
 
   <div class="wrap prose tight">
@@ -168,6 +162,23 @@
   </div>
 
   <div class="wrap prose tight">
+    <!-- ================= skill tree ================= -->
+    <h2 style="margin-top:52px">Skill trees</h2>
+    <p>
+      Every monster earns skill points as it levels up and spends them in its own skill tree.
+      A node can make an attack stronger or unlock a new technique, and the dashed nodes only open
+      after evolving. That way two of the same monster can still play differently.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <figure class="wide">
+      <div class="clip"><video src="../overclash/skill-tree.mp4" poster="../overclash/skill-tree-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Spending skill points in Thumpkin's skill tree"></video></div>
+      <figcaption>From the team menu to Thumpkin's skill tree: two points go into Hundred Hands, a flurry after a parry.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap prose tight">
     <!-- ================= overworld ================= -->
     <div class="engine">Engine 3</div>
     <h2>The overworld</h2>
@@ -179,8 +190,8 @@
   </div>
 
   <div class="wrap">
-    <div class="clip"><video src="../overclash/town-code.mp4" poster="../overclash/town-code-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Walking around Hollowmere"></video></div>
-    <p style="font-size:14px;color:var(--muted);margin:8px 0 0">Hollowmere with art drawn in code.</p>
+    <div class="clip"><video src="../overclash/house.mp4" poster="../overclash/house-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Walking into the clinic in Hollowmere"></video></div>
+    <p style="font-size:14px;color:var(--muted);margin:8px 0 0">Walking into the clinic: an interior with light falling through the windows and NPCs to talk to.</p>
   </div>
 
   <div class="wrap prose tight" style="padding-top:8px">
@@ -196,16 +207,14 @@
   </div>
 
   <div class="wrap">
-    <div class="duo">
-      <figure>
-        <div class="clip clip--ui"><video src="../overclash/mapmaker.mp4" poster="../overclash/mapmaker-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Building a map in the map maker"></video></div>
-        <figcaption>Building a map: paths, a pond with a boardwalk, a raised area with stairs, and trees (2× speed).</figcaption>
-      </figure>
-      <figure>
-        <div class="clip"><video src="../overclash/cliffs-ledge.mp4" poster="../overclash/cliffs-ledge-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Cliffs and a ledge you hop down"></video></div>
-        <figcaption>Height in the game: cliffs, stairs and a ledge you hop down.</figcaption>
-      </figure>
-    </div>
+    <figure class="wide">
+      <div class="clip clip--ui"><video src="../overclash/mapmaker.mp4" poster="../overclash/mapmaker-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Building a map in the map maker"></video></div>
+      <figcaption>Building a map: paths, a pond with a boardwalk, a raised area with stairs, and trees (2× speed).</figcaption>
+    </figure>
+    <figure class="wide">
+      <div class="clip clip--ui"><video src="../overclash/mapmaker2.mp4" poster="../overclash/mapmaker2-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Building height and placing props in the map maker"></video></div>
+      <figcaption>Building height layer by layer, then placing bushes and mushrooms and setting their collision.</figcaption>
+    </figure>
   </div>
 
   <div class="wrap prose tight">
@@ -248,8 +257,6 @@
         <figcaption>After: the same town with imported grass, paths, trees and player.</figcaption>
       </figure>
     </div>
-    <div class="clip"><video src="../overclash/town-chatgpt.mp4" poster="../overclash/town-chatgpt-poster.jpg" muted loop playsinline preload="none" data-autoplay aria-label="Walking around in the ChatGPT art"></video></div>
-    <p style="font-size:14px;color:var(--muted);margin:8px 0 0">Walking around in the new art, with the ChatGPT character as the player.</p>
   </div>
 
   <div class="wrap prose" style="padding-top:8px">
